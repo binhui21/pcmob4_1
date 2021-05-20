@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   return (
     <View style={styles.container}>
@@ -11,7 +11,9 @@ export default function App() {
       <Text style={styles.arrivalTime}>
         {loading ? "Loading..." : "Loaded"}
       </Text>
-      <Button title="Refresh!" style={styles.button}></Button>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Refresh!</Text>
+      </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
   );
@@ -36,6 +38,9 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: 'green',
-    margin: 10,
+    padding: 10,
+  },
+  buttonText: {
+
   },
 });
